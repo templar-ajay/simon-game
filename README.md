@@ -1,2 +1,2 @@
-# simon-game
+# [click me]()
 simon game challenge
