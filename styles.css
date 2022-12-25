@@ -9,6 +9,12 @@ body {
   margin: 5%;
   color: #fef2bf;
 }
+.high-score {
+  font-family: "Press Start 2P", cursive;
+  color: #fef2bf;
+  margin: 5%;
+  font-size: 2rem;
+}
 
 .container {
   display: block;

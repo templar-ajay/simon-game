@@ -1,7 +1,9 @@
 const colors = ["red", "green", "blue", "yellow"];
-let level = 0;
-let gamePattern = [];
-let playerPattern = [];
+let level,
+  gamePattern,
+  playerPattern,
+  highScore = localStorage.getItem("highScore");
+resetGame();
 
 $(document).on("keydown", () => {
   if (!level) {
@@ -65,6 +67,16 @@ function press(color) {
   }, 100);
 }
 function resetGame() {
+  if (+highScore < level) localStorage.setItem("highScore", level);
+  highScore = localStorage.getItem("highScore");
+  if (+highScore) {
+    console.log("show");
+    $(".high-score span").text(highScore);
+    $(".high-score").css("display", "block");
+  } else {
+    console.log("hide");
+    $(".high-score").css("display", "none");
+  }
   level = 0;
   gamePattern = [];
   playerPattern = [];
